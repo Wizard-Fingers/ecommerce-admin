@@ -41,7 +41,8 @@ export const StoreModal = () => {
 
       const response = await axios.post("/api/stores", values);
 
-      toast.success("Successfully created");
+      window.location.assign(`/${response.data.id}`); // I used this instead of the standard way because I couldn't fugue out how to load without the Model being open on the page
+      // toast.success("Successfully created");
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
